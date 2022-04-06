@@ -87,6 +87,17 @@
     </div>
 
     <!-- /cards -->
+
+    <!-- share -->
+    <div class="row">
+      <div class="share">
+        <h2 class="mt-4">SHARE</h2>
+        <div class="mx-auto fw-bold rounded-pill py-1 my-3">
+          httprequest.com/a23a8473a
+        </div>
+      </div>
+    </div>
+    <!-- /share -->
   </div>
 </template>
 
@@ -140,6 +151,12 @@ h1 {
     div {
       margin-bottom: 1px;
     }
+  }
+}
+.share {
+  div {
+    background-color: $bg-color-light-grey;
+    width: 20%;
   }
 }
 </style>

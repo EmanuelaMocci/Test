@@ -1,38 +1,73 @@
 <template>
-  <div class="container">
+  <div class="container d-block d-md-none">
     <div class="row">
       <div class="col">
         <h1 class="title text-start mx-2 my-3 fw-bold fs-3">Timing Analysis</h1>
 
         <!-- chart -->
-        <div
-          class="chart d-flex justify-content-center align-items-center mx-auto mt-5"
-        >
-          <div class="values top fw-bold">600</div>
-          <div class="values middle fw-bold">700</div>
-          <div class="values bottom fw-bold">800</div>
+        <div class="chart-container">
+          <div
+            class="chart d-flex justify-content-center align-items-center mx-auto mt-5"
+          >
+            <!-- chart values -->
+            <div class="values top fw-bold">600</div>
+            <div class="values middle fw-bold">700</div>
+            <div class="values bottom fw-bold">800</div>
+            <!-- /chart values -->
 
-          <div class="top">
-            <div class="chart-middle">
-              <h3 class="pt-5 fs-1">720</h3>
-              <h4 class="fs-4">Great!</h4>
+            <div class="top">
+              <div class="chart-middle">
+                <h3 class="pt-5 fs-1">720</h3>
+                <h4 class="fs-4">Great!</h4>
+              </div>
+              <div class="circle"></div>
             </div>
-            <div class="circle"></div>
-          </div>
 
-          <div class="bottom">
-            <div class="chart-middle"></div>
-            <div class="circle"></div>
+            <div class="bottom">
+              <div class="chart-middle"></div>
+              <div class="circle"></div>
+            </div>
           </div>
-        </div>
-        <!-- /chart -->
+          <!-- /chart -->
 
-        <!-- text -->
-        <div>
-          <h2 class="text-top fw-bold">Page Load</h2>
-          <h3 class="text-bottom fw-bold">0.4s</h3>
+          <!-- text -->
+          <div>
+            <h2 class="text-top fw-bold">Page Load</h2>
+            <h3 class="text-bottom fw-bold">0.4s</h3>
+          </div>
+          <!-- /text -->
+
+          <div
+            class="chart d-flex justify-content-center align-items-center mx-auto mt-5"
+          >
+            <!-- chart values -->
+            <div class="values top fw-bold">600</div>
+            <div class="values middle fw-bold">700</div>
+            <div class="values bottom fw-bold">800</div>
+            <!-- /chart values -->
+
+            <div class="top">
+              <div class="chart-middle">
+                <h3 class="pt-5 fs-1">720</h3>
+                <h4 class="fs-4">Great!</h4>
+              </div>
+              <div class="circle"></div>
+            </div>
+
+            <div class="bottom">
+              <div class="chart-middle"></div>
+              <div class="circle"></div>
+            </div>
+          </div>
+          <!-- /chart -->
+
+          <!-- text -->
+          <div>
+            <h2 class="text-top fw-bold">Page Load</h2>
+            <h3 class="text-bottom fw-bold">0.9s</h3>
+          </div>
+          <!-- /text -->
         </div>
-        <!-- /text -->
       </div>
     </div>
   </div>

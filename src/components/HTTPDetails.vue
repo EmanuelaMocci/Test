@@ -90,7 +90,7 @@
 
     <!-- share -->
     <div class="row">
-      <div class="share">
+      <div class="share d-none d-md-block">
         <h2 class="mt-4">SHARE</h2>
         <div class="mx-auto fw-bold rounded-pill py-1 my-3">
           httprequest.com/a23a8473a

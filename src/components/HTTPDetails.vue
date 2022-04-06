@@ -156,7 +156,7 @@ h1 {
 .share {
   div {
     background-color: $bg-color-light-grey;
-    width: 20%;
+    width: 300px;
   }
 }
 </style>

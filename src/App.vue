@@ -1,16 +1,19 @@
 <template>
   <div id="app">
     <HTTPDetails />
+    <Chart />
   </div>
 </template>
 
 <script>
 import HTTPDetails from "./components/HTTPDetails.vue";
+import Chart from "./components/Chart.vue";
 
 export default {
   name: "App",
   components: {
     HTTPDetails,
+    Chart,
   },
 };
 </script>

@@ -1,14 +1,16 @@
 <template>
   <div class="container">
+    <!-- HTTP url -->
     <div class="row">
       <div class="col-12">
         <h1 class="mt-5">200</h1>
         <p class="fs-5">Everything is fine!</p>
       </div>
     </div>
+    <!-- input -->
     <div class="row">
       <div
-        class="col-xs-12 col-md-5 input p-2 rounded-3 m-auto d-flex justify-content-between"
+        class="col-xs-12 col-lg-5 input p-2 rounded-3 m-auto d-flex justify-content-between"
       >
         <select
           name="HTTP methods"
@@ -36,6 +38,52 @@
         </button>
       </div>
     </div>
+    <!-- /input -->
+
+    <!-- /HTTP url -->
+
+    <!-- cards -->
+    <div class="row">
+      <div class="d-flex cards mt-4 text-start gap-3">
+        <!-- left card -->
+        <div class="col-4 border left-card rounded-3">
+          <div class="fs-5 pb-4 p-2">URL INFO</div>
+          <div class="p-2">
+            <h5 class="fw-bold">DOMAIN</h5>
+            <span>www.yoursite.com</span>
+          </div>
+          <div class="p-2">
+            <h5 class="fw-bold">SCHEME</h5>
+            <span>HTTP</span>
+          </div>
+          <div class="p-2">
+            <h5 class="fw-bold">PATH</h5>
+            <span>home</span>
+          </div>
+        </div>
+        <!-- /left card -->
+
+        <!-- middle card -->
+        <div class="col-4 border middle-card rounded-3">
+          <div class="fs-5 ps-3 p-2">RESPONSE</div>
+          <div class="fs-5 p-3">HTTP/1. 2 302</div>
+          <div class="fs-5 p-3">Location:/newpage.php</div>
+          <div class="fs-5 p-3">Server: Apache/2.2.14(Win32)</div>
+        </div>
+        <!-- /middle card -->
+
+        <!-- right card -->
+        <div class="col-4 border right-card rounded-3">
+          <div class="fs-5 ps-3 p-2">RESPONSE</div>
+          <div class="fs-5 p-3">HTTP/1. 1 200 OK</div>
+          <div class="fs-5 p-3">Date: Mon, 27 Jul 2009</div>
+          <div class="fs-5 p-3">Server: Apache/2.2.14(Win32)</div>
+        </div>
+        <!-- /right card -->
+      </div>
+    </div>
+
+    <!-- /cards -->
   </div>
 </template>
 
@@ -54,14 +102,39 @@ h1 {
   font-size: 50px;
 }
 .input {
-  background-color: $bg-color-light;
+  background-color: $bg-color-light-grey;
 
   input {
-    background-color: $bg-color-light;
+    background-color: $bg-color-light-grey;
     width: 70%;
   }
   select {
     appearance: none;
+  }
+}
+.cards {
+  height: 500px;
+  overflow-x: scroll;
+  .left-card {
+    background-color: $bg-color-light-grey;
+    width: 400px;
+    div:first-child {
+      background-color: $bg-color-light-grey;
+    }
+    div {
+      background-color: $bg-color-dark-grey;
+      margin-bottom: 1px;
+    }
+  }
+  .middle-card,
+  .right-card {
+    width: 400px;
+    div:not(:first-child) {
+      background-color: $bg-color-light-grey;
+    }
+    div {
+      margin-bottom: 1px;
+    }
   }
 }
 </style>

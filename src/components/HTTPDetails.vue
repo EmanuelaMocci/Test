@@ -2,20 +2,19 @@
   <div class="container">
     <!-- HTTP url -->
     <div class="row">
-      <div class="col-12">
+      <div class="col-12 d-flex flex-column order-1 order-md-0">
         <h1 class="mt-5">200</h1>
         <p class="fs-5">Everything is fine!</p>
       </div>
-    </div>
-    <!-- input -->
-    <div class="row">
+
+      <!-- input -->
       <div
-        class="col-xs-12 col-lg-5 input p-2 rounded-3 m-auto d-flex justify-content-between"
+        class="col-xs-12 col-lg-7 input p-2 rounded-3 mx-auto my-2 d-flex justify-content-between order-0 order-md-1"
       >
         <select
           name="HTTP methods"
           id=""
-          class="p-2 border-0 rounded-3 text-center"
+          class="py-2 px-3 fs-5 border-0 rounded-3 text-center"
         >
           <option value="GET">GET</option>
           <option value="POST">POST</option>
@@ -32,9 +31,13 @@
         />
         <button
           type="submit"
-          class="p-2 px-4 rounded-3 border-0 bg-primary text-white"
+          class="p-2 px-4 rounded-3 border-0 bg-primary text-white fs-5"
         >
-          SEND
+          <span class="d-none d-md-block">SEND</span>
+          <font-awesome-icon
+            icon="fa-solid fa-search"
+            class="d-block d-md-none"
+          />
         </button>
       </div>
     </div>
@@ -97,12 +100,14 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
 @import "../style/partials/variables.scss";
+@import "../style/app.scss";
 
 h1 {
-  font-size: 50px;
+  font-size: 60px !important;
 }
 .input {
   background-color: $bg-color-light-grey;
+  height: 70px;
 
   input {
     background-color: $bg-color-light-grey;

@@ -2,8 +2,8 @@
   <div class="container">
     <!-- HTTP url -->
     <div class="row">
-      <div class="col-12 d-flex flex-column order-1 order-md-0">
-        <h1 class="mt-5">200</h1>
+      <div class="col-12 d-flex flex-column order-1 order-md-0" v-if="response">
+        <h1 class="mt-5">{{ response.status }}</h1>
         <p class="fs-5">Everything is fine!</p>
       </div>
 
@@ -26,12 +26,13 @@
           type="text"
           name=""
           id=""
-          placeholder="URL link"
           class="p-2 border-0"
+          v-model="api_url"
         />
         <button
           type="submit"
           class="p-2 px-4 rounded-3 border-0 bg-primary text-white fs-5"
+          @click="httpCall"
         >
           <span class="d-none d-md-block">SEND</span>
           <font-awesome-icon
@@ -47,13 +48,13 @@
 
     <!-- cards -->
     <div class="row">
-      <div class="d-flex cards mt-4 text-start gap-3">
+      <div class="d-flex cards mt-4 text-start gap-3" v-if="response">
         <!-- left card -->
         <div class="col-4 border left-card rounded-3">
           <div class="fs-5 pb-4 p-2">URL INFO</div>
           <div class="p-2">
             <h5 class="fw-bold">DOMAIN</h5>
-            <span>www.yoursite.com</span>
+            <span>{{ response.config.url }}</span>
           </div>
           <div class="p-2">
             <h5 class="fw-bold">SCHEME</h5>
@@ -78,8 +79,10 @@
         <!-- right card -->
         <div class="col-4 border right-card rounded-3">
           <div class="fs-5 ps-3 p-2">RESPONSE</div>
-          <div class="fs-5 p-3">HTTP/1. 1 200 OK</div>
-          <div class="fs-5 p-3">Date: Mon, 27 Jul 2009</div>
+          <div class="fs-5 p-3" v-if="response">
+            HTTP/1. 1 {{ response.status }} {{ response.statusText }}
+          </div>
+          <div class="fs-5 p-3">Date: {{ dateBuilder() }}</div>
           <div class="fs-5 p-3">Server: Apache/2.2.14(Win32)</div>
         </div>
         <!-- /right card -->
@@ -90,21 +93,78 @@
 
     <!-- share -->
     <div class="row">
-      <div class="share d-none d-md-block">
+      <div class="share d-none d-md-block" v-if="response">
         <h2 class="mt-4">SHARE</h2>
         <div class="mx-auto fw-bold rounded-pill py-1 my-3">
-          httprequest.com/a23a8473a
+          {{ response.config.url }}
         </div>
       </div>
     </div>
     <!-- /share -->
+    <Chart :responseTime="responseTime" />
   </div>
 </template>
 
 <script>
+import axios from "axios";
+import Chart from "../components/Chart.vue";
+
 export default {
-  name: "HTTPDetails",
-  props: {},
+  name: "HttpDetails",
+  components: { Chart },
+  data() {
+    return {
+      response: null,
+      responseTime: null,
+      api_url:
+        "http://www.7timer.info/bin/api.pl?lon=113.17&lat=23.09&product=astro&output=json",
+    };
+  },
+  methods: {
+    async httpCall() {
+      console.log("ciao");
+
+      try {
+        // get start time taken from API call
+        const start = Date.now();
+        const response = await axios.get(`${this.api_url}`);
+
+        this.response = response;
+        console.log(response);
+
+        // get end time taken from API call and calculate it
+        const finish = Date.now();
+        this.responseTime = ((finish - start) / 1000).toFixed(1);
+        console.log(this.responseTime);
+      } catch (error) {
+        console.log(error);
+      }
+    },
+    dateBuilder() {
+      let d = new Date();
+      let months = [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
+      ];
+      let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+      let day = days[d.getDay()];
+      let date = d.getDate();
+      let month = months[d.getMonth()];
+      let year = d.getFullYear();
+
+      return `${day}, ${date} ${month} ${year}`;
+    },
+  },
 };
 </script>
 
@@ -156,7 +216,6 @@ h1 {
 .share {
   div {
     background-color: $bg-color-light-grey;
-    width: 300px;
   }
 }
 </style>

@@ -33,7 +33,7 @@
           <!-- text -->
           <div>
             <h2 class="text-top fw-bold">Page Load</h2>
-            <h3 class="text-bottom fw-bold">0.4s</h3>
+            <h3 class="text-bottom fw-bold">{{ responseTime }}s</h3>
           </div>
           <!-- /text -->
 
@@ -64,7 +64,7 @@
           <!-- text -->
           <div>
             <h2 class="text-top fw-bold">Page Load</h2>
-            <h3 class="text-bottom fw-bold">0.9s</h3>
+            <h3 class="text-bottom fw-bold">{{ responseTime }}s</h3>
           </div>
           <!-- /text -->
         </div>
@@ -76,6 +76,11 @@
 <script>
 export default {
   name: "Chart",
+  props: {
+    responseTime: {
+      type: [Number, String],
+    },
+  },
 };
 </script>
 

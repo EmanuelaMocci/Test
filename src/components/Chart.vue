@@ -146,23 +146,23 @@ export default {
     height: 200px;
     border-radius: 50%;
     background-image: conic-gradient(
-      white -150deg,
-      #ffd222 54deg,
-      white 53deg,
-      white 55deg,
-      white 56deg,
-      #77e5b3 0 105deg,
-      white 104deg,
-      white 107deg,
-      #23d683 0 140deg,
-      white 0 218deg,
-      #ff5353 0
+      $chart-color1 -150deg,
+      $chart-color2 54deg,
+      $chart-color1 53deg,
+      $chart-color1 55deg,
+      $chart-color1 56deg,
+      $chart-color3 0 105deg,
+      $chart-color1 104deg,
+      $chart-color1 107deg,
+      $chart-color4 0 140deg,
+      $chart-color1 0 218deg,
+      $chart-color5 0
     );
     .top {
       .chart-middle {
         height: 180px;
         width: 180px;
-        background-color: white;
+        background-color: $chart-color1;
         border-radius: 50%;
       }
       .circle {
@@ -170,8 +170,8 @@ export default {
         height: 20px;
         width: 20px;
         border-radius: 50%;
-        border: 4px solid #77e5b3;
-        background-color: white;
+        border: 4px solid $chart-color3;
+        background-color: $chart-color1;
         right: 4px;
         top: 50px;
       }

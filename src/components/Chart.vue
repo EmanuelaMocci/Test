@@ -10,7 +10,7 @@
         >
           <div class="swipe-button"></div>
         </div>
-        <div :class="swiped == true ? 'show' : 'none'">
+        <div :class="swiped == true ? 'd-block' : 'd-none'">
           <h1 class="title text-start mx-2 my-3 fw-bold fs-3">
             Timing Analysis
           </h1>
@@ -200,11 +200,5 @@ export default {
     right: -25px;
     font-size: 10px;
   }
-}
-.show {
-  display: block;
-}
-.none {
-  display: none;
 }
 </style>

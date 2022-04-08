@@ -47,7 +47,7 @@
         </div>
       </div>
       <!-- /input -->
-
+      <div :class="response == ture ? 'heigth-block' : ''"></div>
       <!-- /HTTP url -->
 
       <!-- cards -->
@@ -121,8 +121,7 @@ export default {
     return {
       response: null,
       responseTime: null,
-      api_url:
-        "http://www.7timer.info/bin/api.pl?lon=113.17&lat=23.09&product=astro&output=json",
+      api_url: "http://localhost:3000/dataseries",
       swiped: null,
     };
   },
@@ -183,6 +182,10 @@ export default {
 @import "../style/partials/variables.scss";
 @import "../style/app.scss";
 
+.heigth-block {
+  min-height: 80vh;
+  background-color: transparent;
+}
 h1 {
   font-size: 60px !important;
 }
@@ -226,6 +229,7 @@ h1 {
 .share {
   div {
     background-color: $bg-color-light-grey;
+    width: 300px;
   }
 }
 .swipe-button-container {

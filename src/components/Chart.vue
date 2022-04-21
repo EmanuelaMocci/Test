@@ -2,7 +2,7 @@
   <div class="container d-block d-md-none">
     <div class="row">
       <div class="col">
-        <!-- bottone swipe -->
+        <!-- button swipe -->
         <div
           class="swipe-button-container"
           v-touch:swipe="swipeHandler"
@@ -10,6 +10,7 @@
         >
           <div class="swipe-button"></div>
         </div>
+        <!-- /button swipe -->
         <div :class="swiped == true ? 'd-block' : 'd-none'">
           <h1 class="title text-start mx-2 my-3 fw-bold fs-3">
             Timing Analysis

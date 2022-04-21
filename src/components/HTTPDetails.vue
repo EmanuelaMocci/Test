@@ -47,7 +47,7 @@
         </div>
       </div>
       <!-- /input -->
-      <div :class="response == ture ? 'heigth-block' : ''"></div>
+      <div :class="response == ture ? 'height-block' : ''"></div>
       <!-- /HTTP url -->
 
       <!-- cards -->
@@ -131,8 +131,6 @@ export default {
       console.log(swiped);
     },
     async httpCall() {
-      console.log("ciao");
-
       try {
         // get start time taken from API call
         const start = Date.now();
@@ -182,7 +180,7 @@ export default {
 @import "../style/partials/variables.scss";
 @import "../style/app.scss";
 
-.heigth-block {
+.height-block {
   min-height: 80vh;
   background-color: transparent;
 }

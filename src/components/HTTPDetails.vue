@@ -128,7 +128,6 @@ export default {
   methods: {
     swipeMethod(swiped) {
       this.swiped = swiped;
-      console.log(swiped);
     },
     async httpCall() {
       try {
@@ -137,12 +136,10 @@ export default {
         const response = await axios.get(`${this.api_url}`);
 
         this.response = response;
-        console.log(response);
 
         // get end time taken from API call and calculate it
         const finish = Date.now();
-        this.responseTime = ((finish - start) / 1000).toFixed(1);
-        console.log(this.responseTime);
+        this.responseTime = ((finish - start) / 1000).toFixed(2);
       } catch (error) {
         console.log(error);
       }

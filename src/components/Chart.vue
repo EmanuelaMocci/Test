@@ -104,9 +104,6 @@ export default {
     };
   },
   methods: {
-    ciccio() {
-      console.log("hello");
-    },
     swipeHandler(direction) {
       if (direction == "top") {
         this.swiped = true;
